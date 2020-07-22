@@ -1,2 +1,2 @@
-def prototype(x):
+def prototape(x):
 	return x
