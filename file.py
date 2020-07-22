@@ -1,2 +1,6 @@
-def prototype(x):
+
+
+
+
+def prototype(x:
 	return x
