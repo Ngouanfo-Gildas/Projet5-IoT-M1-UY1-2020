@@ -1,0 +1,27 @@
+{% extends "gestionIoT/accueil.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}
+Inscription sur <b class="text-info"> IoT Manager</b>
+{% endblock %} 
+
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-12">    
+        {{ form.telephone_proprio|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.pays_proprio|as_crispy_field }}
+      </div>
+      <div class="col-12">
+        {{ form.avatar|as_crispy_field }}
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Sauvegarder</button>
+  </form>
+{% endblock %}

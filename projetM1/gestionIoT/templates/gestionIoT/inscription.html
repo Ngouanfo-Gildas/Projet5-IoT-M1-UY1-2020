@@ -1,0 +1,73 @@
+{% extends "gestionIoT/accueil.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bienvenue</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+{% load crispy_forms_tags %}
+
+
+  <div class="p-5 mt-5 rounded container-sm bg-dark text-light">
+  {% if save %}
+    <h2> Votre inscription a réussi</h2>
+  {% else %}
+      {% block page_title %}
+        <h3 class="mt-2">
+          Inscription sur <b class="text-info"> IoT Manager</b>
+        </h3>
+          <hr class="mt-2 mb-4">
+      {% endblock %}
+
+          {% block content %}
+      <form enctype="multipart/form-data" action="{% url 'inscription' %}" method="post" >
+          {% csrf_token %}
+         <!-- {{ form.as_p }} {{ form1.as_p }} -->
+          
+          <div class="row">
+            <div class="col-6"> 
+              {{ form.username|as_crispy_field }}   
+            </div>
+            <div class="col-6"> 
+              {{ form.email|as_crispy_field }}   
+            </div>
+            <div class="col-4"> 
+              {{ form.first_name|as_crispy_field }}   
+            </div>
+            <div class="col-4"> 
+              {{ form.last_name|as_crispy_field }}   
+            </div>
+            <div class="col-4">
+              {{ form1.avatar|as_crispy_field }}
+            </div> 
+
+            <div class="col-6">
+              {{ form1.pays_proprio|as_crispy_field }}
+            </div>
+            <div class="col-6">
+              {{ form1.telephone_proprio|as_crispy_field }}
+            </div>
+
+            <div class="col-12"> 
+              {{ form.password|as_crispy_field }}   
+            </div>
+           
+          </div>
+              <button type="submit" class="btn btn-outline-success p-2 m-1 btn-block">S'INSCRIRE'</button>
+            
+          </div>
+      </form>
+    {% endblock %}
+    {% endif %}
+  </div>
+</body>

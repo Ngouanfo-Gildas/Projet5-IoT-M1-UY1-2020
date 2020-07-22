@@ -1,0 +1,101 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+    <!--link rel="stylesheet" href="{% static 'gestionIoT/logi.css' %}"-->
+</head>
+
+{% load crispy_forms_tags %}
+<body style="background-image: url({% static 'gestionIoT/iot1.jpg' %})">
+  <!--div class="container mt-5 text-monospace">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="container col-6 mt-5 p-5 bg-light rounded">
+        {% if error %}
+        <p><strong>Utilisateur inexistant ou mauvais de mot de
+        passe.</strong></p>
+        {% endif %}
+        {% if user.is_authenticated %}
+        Vous êtes connecté, {{ user.username }} !
+        {% else %}
+        <form method="POST" action="{% url 'login' %}">
+          {% csrf_token %}
+          <div class="row">
+            {{ form.as_p}}
+            <div class="col-8 mt-3"><a href="{% url 'password_reset' %}">mot de passe oublié?</a></div>
+            <div class="col-4 mt-3">
+              <input type="submit" class="btn btn-primary p-2 btn-block" ></input>
+            </div>
+            <div class="col-12"></div>
+          </div>
+        </form> {% endif %}
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div-->
+
+    <div class="container p-5">
+      <div class="container pl-5 pr-5">
+      <div class="container pl-5 pr-5">
+        <div class="container pl-5 pr-5">
+        <div class="container pl-5 pr-5">
+        <div class="container pl-5 pr-5">
+          <div class="card">
+            <div class="card-header text-center"> 
+              <h4>Connectez-vous</h4>
+            </div>
+            <div class="card-body">
+              {% if error %}
+                <p><strong>Utilisateur inexistant ou mauvais de mot de passe.</strong></p>
+              {% endif %}
+              {% if user.is_authenticated %}
+                Vous êtes connecté, {{ user.username }} !
+              {% else %}
+                <form method="POST" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-12">{{ form.username|as_crispy_field }}</div>
+                    <div class="col-12">{{ form.password|as_crispy_field }}</div>
+                    <!--{{ form.as_ul }}-->
+                    <div class="col-8 mt-3"></div>
+                    <div class="col-3 mt-3">
+                      <input type="submit" class="btn btn-primary p-2 btn-block" ></input>
+                    </div>
+                    <div class="col-12"></div>
+                  </div>
+                </form>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-6 text-center">
+                  mot de passe oublié? <a href="{% url 'password_reset' %}">restaurez le..</a>
+                </div>
+                <div class="col-6 text-center">
+                  Vous n'avez pas de compte? <a href="{% url 'inscription' %}"> créez le... </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div-->
+
+
+</body>
+</html>
+

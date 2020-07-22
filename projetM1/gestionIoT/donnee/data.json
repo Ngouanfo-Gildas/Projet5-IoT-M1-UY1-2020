@@ -1,0 +1,41 @@
+{
+    "addresse_reseau": "8.5.2.1",
+    "capteurs":[
+        {
+            "nom_capteur": "capteur 1",
+            "add_capteur": "1.2",
+            "donnees":{
+                "date_m": "10/07/2020",
+                "heure_m": "10:30:40",
+                "applicative": {
+                    "valeur_brute": "11101",
+                    "valeur_traite": "65"
+                },
+                "controle": {
+                    "taux_livraison": "90%",
+                    "qlte_signal": "Bon",
+                    "qte_energie": "65%"
+                }
+            },
+            "voisins": [1.5, 1.6, 1.3]
+        },
+        {
+            "nom_capteur": "capteur 2",
+            "add_capteur": "1.6",
+            "donnees":{
+                "date_m": "10/07/2020",
+                "heure_m": "10:30:40",
+                "applicative": {
+                    "valeur_brute": "11101",
+                    "valeur_traite": "65"
+                },
+                "controle": {
+                    "taux_livraison": "90%",
+                    "qlte_signal": "Bon",
+                    "qte_energie": "65%"
+                }
+            },
+            "voisins": [1.2, 1.5, 1.3]
+        }
+    ]
+}
