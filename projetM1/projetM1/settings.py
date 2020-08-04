@@ -25,11 +25,11 @@ SECRET_KEY = 'z&5#mvb_gbp+49nvq(f#@nkbe$^6eks%id^3^im)i=5n^cbww6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.208', '127.0.0.1', 'localhost']
+#USE_X_FORWARDED_HOST = True
 
 if DEBUG: # en developpement
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 
 # Application definition
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'gestionIoT',
     'crispy_forms',
     'django_countries',
-    'captcha',
+    #'captcha',
     #'phonenumber_field',
 ]
 
